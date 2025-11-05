@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalMixingERP.UI", "..\MedicalMixingERP.UI\MedicalMixingERP.UI.csproj", "{52D8C9B3-5DF5-417A-B4D5-9667501DAE99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalMixingERP.UI", "..\MedicalMixingERP.UI\MedicalMixingERP.UI.csproj", "{0D4DBECD-68B5-4CBC-9633-27E32F225C4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,10 @@ Global
 		{0740B593-8396-414F-A095-21E7C89C111B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0740B593-8396-414F-A095-21E7C89C111B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0740B593-8396-414F-A095-21E7C89C111B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52D8C9B3-5DF5-417A-B4D5-9667501DAE99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52D8C9B3-5DF5-417A-B4D5-9667501DAE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52D8C9B3-5DF5-417A-B4D5-9667501DAE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52D8C9B3-5DF5-417A-B4D5-9667501DAE99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D4DBECD-68B5-4CBC-9633-27E32F225C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D4DBECD-68B5-4CBC-9633-27E32F225C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D4DBECD-68B5-4CBC-9633-27E32F225C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D4DBECD-68B5-4CBC-9633-27E32F225C4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
