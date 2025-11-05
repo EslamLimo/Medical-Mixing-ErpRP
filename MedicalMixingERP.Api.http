@@ -1,0 +1,6 @@
+@MedicalMixingERP.Api_HostAddress = http://localhost:5081
+
+GET {{MedicalMixingERP.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
