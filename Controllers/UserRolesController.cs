@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MedicalMixingERP.Api.Data;
+﻿using MedicalMixingERP.Api.Data;
 using MedicalMixingERP.Api.Models;
+using MedicalMixingERP.Api.Models.DTO;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace MedicalMixingERP.Api.Controllers
@@ -35,34 +36,65 @@ namespace MedicalMixingERP.Api.Controllers
             return ur;
         }
 
+        //[HttpPost]
+        //public async Task<ActionResult<UserRole>> PostUserRole(UserRole ur)
+        //{
+        //    _context.UserRoles.Add(ur);
+        //    await _context.SaveChangesAsync();
+        //    return CreatedAtAction(nameof(GetUserRole), new { id = ur.Id }, ur);
+        //}
         [HttpPost]
-        public async Task<ActionResult<UserRole>> PostUserRole(UserRole ur)
+        public async Task<ActionResult<UserRole>> PostUserRole(UserRoleCreateDto dto)
         {
+            var ur = new UserRole
+            {
+                UserId = dto.UserId,
+                RoleId = dto.RoleId
+            };
+
             _context.UserRoles.Add(ur);
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetUserRole), new { id = ur.Id }, ur);
         }
 
+
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutUserRole(int id, UserRole ur)
+        //{
+        //    if (id != ur.Id)
+        //        return BadRequest();
+
+        //    _context.Entry(ur).State = EntityState.Modified;
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!_context.UserRoles.Any(e => e.Id == id))
+        //            return NotFound();
+        //        else
+        //            throw;
+        //    }
+        //    return NoContent();
+        //}
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserRole(int id, UserRole ur)
+        public async Task<IActionResult> PutUserRole(int id, UserRoleUpdateDto dto)
         {
-            if (id != ur.Id)
+            if (id != dto.Id)
                 return BadRequest();
 
-            _context.Entry(ur).State = EntityState.Modified;
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_context.UserRoles.Any(e => e.Id == id))
-                    return NotFound();
-                else
-                    throw;
-            }
+            var ur = await _context.UserRoles.FindAsync(id);
+            if (ur == null)
+                return NotFound();
+
+            ur.UserId = dto.UserId;
+            ur.RoleId = dto.RoleId;
+
+            await _context.SaveChangesAsync();
             return NoContent();
         }
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserRole(int id)
